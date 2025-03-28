@@ -99,6 +99,27 @@ nav ul li a {
     font-size: 1.1em;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chart-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .chart-row.reverse {
+        flex-direction: column;
+    }
+
+    .chart {
+        width: 100%;
+    }
+
+    .chart-text {
+        width: 90%;
+        text-align: center;
+    }
+}
+
 /* Prediction Form */
 #predict {
     padding: 40px 20px;
