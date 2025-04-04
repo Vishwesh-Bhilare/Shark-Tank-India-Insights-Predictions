@@ -80,5 +80,20 @@
         <p>&copy; 2025 Shark Tank India Insights. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
+    <script>
+  const chartRows = document.querySelectorAll('.chart-row');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  chartRows.forEach(row => observer.observe(row));
+</script>
 </body>
 </html>
