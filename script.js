@@ -20,11 +20,11 @@ document.getElementById("prediction-form").addEventListener("submit", function (
         },
         tech: {
             text: "Technology startups attract high valuations due to scalability and innovation-driven models.",
-            image: "images/industry-tech.png"
+            image: "images/industry-tech.jpg"
         },
         fashion: {
             text: "Fashion startups focus on niche branding and online presence, making them attractive in D2C models.",
-            image: "images/industry-fashion.png"
+            image: "images/industry-fashion.jpg"
         },
         healthcare: {
             text: "Healthcare startups gain investor trust by offering impact-driven solutions and addressing real-world problems.",
