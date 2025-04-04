@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: Poppins, Arial;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -75,11 +75,20 @@ nav ul li a {
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     background: linear-gradient(to right, #eef3fc, #d4e1f5);
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease-in-out;
 }
 
 .chart-row.reverse {
     flex-direction: row-reverse;
     background: linear-gradient(to left, #eef3fc, #d4e1f5);
+    transform: translateX(50px);
+}
+
+.chart-row.visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .chart {
@@ -157,11 +166,18 @@ footer {
     color: white;
 }
 
-/* js side */
+/* Prediction Box */
 .prediction-box {
     margin-top: 20px;
     background: #ffffff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.industry-trend img {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 10px;
+    border-radius: 6px;
 }
