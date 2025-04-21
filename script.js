@@ -13,10 +13,8 @@ document.getElementById("prediction-form").addEventListener("submit", async func
   spinner.style.display = "block";
   resultDiv.innerHTML = "";
 
-  // Simulate processing
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  // Valuation multiplier logic
   let multiplier = 4.5;
   if (industry === "tech" || industry === "healthcare") multiplier += 1;
   if (hasPatent) multiplier += 1;
@@ -79,19 +77,25 @@ document.getElementById("prediction-form").addEventListener("submit", async func
 
   const selected = industryInfo[industry];
 
-  // Build output
   spinner.style.display = "none";
   resultDiv.innerHTML = `
     <div class="prediction-box">
-      <h3>Estimated Valuation: ₹${estimatedValuation.toFixed(2)} Cr</h3>
-      <p>You're offering <strong>${askEquity.toFixed(1)}%</strong> for a deal of <strong>₹${askAmount.toFixed(2)} Cr</strong>.</p>
-      <p><em>${equityFeedback}</em></p>
+      <div class="summary">
+        <h3>Estimated Valuation</h3>
+        <p><strong>₹${estimatedValuation.toFixed(2)} Cr</strong></p>
+        <p>You're offering <strong>${askEquity.toFixed(1)}%</strong> for <strong>₹${askAmount.toFixed(2)} Cr</strong>.</p>
+        <p class="feedback"><em>${equityFeedback}</em></p>
+      </div>
 
-      <div class="industry-trend">
-        <h4>${industry.charAt(0).toUpperCase() + industry.slice(1)} Industry Trends</h4>
-        <p>${selected.text}</p>
-        <p><strong>Avg Deal:</strong> ₹${selected.averageDeal.amount} Cr for ${selected.averageDeal.equity}% equity</p>
-        <img src="${selected.image}" alt="${industry} trend graph">
+      <div class="industry-row">
+        <div class="industry-chart">
+          <img src="${selected.image}" alt="${industry} trend graph">
+        </div>
+        <div class="industry-text">
+          <h4>${industry.charAt(0).toUpperCase() + industry.slice(1)} Industry Trends</h4>
+          <p>${selected.text}</p>
+          <p><strong>Avg Deal:</strong> ₹${selected.averageDeal.amount} Cr for ${selected.averageDeal.equity}% equity</p>
+        </div>
       </div>
 
       <div class="similar-startups">
@@ -103,16 +107,3 @@ document.getElementById("prediction-form").addEventListener("submit", async func
     </div>
   `;
 });
-
-// Reveal charts on scroll
-const chartRows = document.querySelectorAll('.chart-row');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, {
-  threshold: 0.1
-});
-chartRows.forEach(row => observer.observe(row));
