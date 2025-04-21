@@ -193,3 +193,34 @@ footer {
   margin-top: 10px;
   border-radius: 6px;
 }
+
+/* General Layout + Responsive + Animations (as before)... */
+
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #0057B8;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.similar-startups {
+  margin-top: 20px;
+  padding: 10px;
+  background: #f8f8f8;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.similar-startups h4,
+.industry-trend h4 {
+  margin-bottom: 10px;
+}
+
