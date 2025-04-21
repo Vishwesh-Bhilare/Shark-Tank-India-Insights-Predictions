@@ -1,99 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shark Tank India Insights</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shark Tank India Insights</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Inside the Tank</h1>
-        <nav>
-            <ul>
-                <li><a href="#insights">Insights</a></li>
-                <li><a href="#predict">Predict</a></li>
-                <li><u><a href="#about">About (Not Working)</a></u></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="hero">
-        <h2>Discover Investment Trends & Predict Your Startup's Future</h2>
-        <p>Analyze past deals, explore industry trends, and get an estimated valuation for your startup.</p>
-        <a href="#predict" class="cta-button">Get Your Prediction</a>
-    </section>
-    
-    <section id="insights">
-        <h2>Key Insights & Trends</h2>
-        <p>Explore investment trends, industry breakdowns, and shark investment patterns.</p>
-        <div id="charts-container">
-            <div class="chart-row">
-                <div class="chart">
-                    <img src="images/investment-trend.png" alt="Investment Trends Over Seasons">
-                </div>
-                <div class="chart-text">
-                    <p><strong>Investment Growth:</strong> Funding in Shark Tank India has increased significantly over seasons, highlighting a growing interest in startups.</p>
-                </div>
-            </div>
-            <div class="chart-row reverse">
-                <div class="chart">
-                    <img src="images/industry-investment.png" alt="Industry-wise Investment">
-                </div>
-                <div class="chart-text">
-                    <p><strong>Top Industries:</strong> Food, Tech, and Healthcare receive the most investments, showing investor confidence in these domains.</p>
-                </div>
-            </div>
+  <header>
+    <h1>Shark Tank India Insights & Predictions</h1>
+    <nav>
+      <ul>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#predict">Predict</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>Discover Investment Trends & Predict Your Startup's Future</h2>
+    <p>Analyze past deals, explore industry trends, and get an estimated valuation for your startup.</p>
+    <a href="#predict" class="cta-button">Get Your Prediction</a>
+  </section>
+
+  <section id="insights">
+    <h2>Key Insights & Trends</h2>
+    <p>Explore investment trends, industry breakdowns, and shark investment patterns.</p>
+    <div id="charts-container">
+      <div class="chart-row">
+        <div class="chart">
+          <img src="images/investment-trend.png" alt="Investment Trends Over Seasons" />
         </div>
-    </section>
-    
-    <section id="predict">
-        <h2>Predict Your Valuation</h2>
-        <p>Enter details about your startup and get an estimated valuation based on Shark Tank India trends.</p>
-        <form id="prediction-form">
-            <label for="industry">Industry:</label>
-            <select id="industry" name="industry">
-                <option value="food">Food</option>
-                <option value="tech">Technology</option>
-                <option value="fashion">Fashion</option>
-                <option value="healthcare">Healthcare</option>
-            </select>
-            
-            <label for="revenue">Yearly Revenue (in INR Crores):</label>
-            <input type="number" id="revenue" name="revenue" required>
-            
-            <label for="patent">Has Patent?</label>
-            <select id="patent" name="patent">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
-            
-            <button type="submit">Predict Valuation</button>
-        </form>
-        <div id="prediction-result"></div>
-    </section>
-    
-    <footer>
-        <p>Vishwesh | Tushar | Neel | Sahil</p>
-    </footer>
-    <script src="script.js"></script>
-    <script>
-  const chartRows = document.querySelectorAll('.chart-row');
+        <div class="chart-text">
+          <p><strong>Investment Growth:</strong> Funding in Shark Tank India has increased significantly over seasons, highlighting a growing interest in startups.</p>
+        </div>
+      </div>
+      <div class="chart-row reverse">
+        <div class="chart">
+          <img src="images/industry-investment.png" alt="Industry-wise Investment" />
+        </div>
+        <div class="chart-text">
+          <p><strong>Top Industries:</strong> Food, Tech, and Healthcare receive the most investments, showing investor confidence in these domains.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+  <section id="predict">
+    <h2>Predict Your Valuation</h2>
+    <p>Enter details about your startup and get an estimated valuation based on Shark Tank India trends.</p>
+    <form id="prediction-form">
+      <label for="industry">Industry:</label>
+      <select id="industry" name="industry">
+        <option value="food">Food</option>
+        <option value="tech">Technology</option>
+        <option value="fashion">Fashion</option>
+        <option value="healthcare">Healthcare</option>
+      </select>
+
+      <label for="revenue">Yearly Revenue (in INR Crores):</label>
+      <input type="number" id="revenue" name="revenue" required />
+
+      <label for="patent">Has Patent?</label>
+      <select id="patent" name="patent">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="askEquity">Desired Equity to Offer (%):</label>
+      <input type="number" id="askEquity" name="askEquity" required />
+
+      <button type="submit">Predict Valuation</button>
+    </form>
+    <div id="prediction-result"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Shark Tank India Insights. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("prediction-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const industry = document.getElementById("industry").value;
+      const revenue = parseFloat(document.getElementById("revenue").value);
+      const hasPatent = document.getElementById("patent").value === "yes";
+      const askEquity = parseFloat(document.getElementById("askEquity").value);
+
+      let multiplier = 4.5;
+      if (industry === "tech" || industry === "healthcare") multiplier += 1;
+      if (hasPatent) multiplier += 1;
+      if (revenue > 5) multiplier += 0.5;
+
+      const estimatedValuation = revenue * multiplier;
+      const askAmount = (askEquity / 100) * estimatedValuation;
+
+      let equityFeedback = "";
+      if (askEquity < 2.5) {
+        equityFeedback = "This is a very aggressive ask. Sharks might question the valuation.";
+      } else if (askEquity > 20) {
+        equityFeedback = "This is a high equity offer. Sharks might perceive undervaluation.";
+      } else {
+        equityFeedback = "This is within a typical Shark Tank equity range.";
       }
-    });
-  }, {
-    threshold: 0.1
-  });
 
-  chartRows.forEach(row => observer.observe(row));
-</script>
+      const industryInfo = {
+        food: {
+          text: "Food startups have shown consistent growth, often backed by strong branding and unique offerings.",
+          image: "images/industry-food.png",
+        },
+        tech: {
+          text: "Technology startups attract high valuations due to scalability and innovation-driven models.",
+          image: "images/industry-tech.png",
+        },
+        fashion: {
+          text: "Fashion startups focus on niche branding and online presence, making them attractive in D2C models.",
+          image: "images/industry-fashion.png",
+        },
+        healthcare: {
+          text: "Healthcare startups gain investor trust by offering impact-driven solutions and addressing real-world problems.",
+          image: "images/industry-healthcare.png",
+        },
+      };
+
+      const selected = industryInfo[industry];
+
+      document.getElementById("prediction-result").innerHTML = `
+        <div class="prediction-box">
+          <h3>Estimated Valuation: ₹${estimatedValuation.toFixed(2)} Cr</h3>
+          <p>You're offering <strong>${askEquity.toFixed(1)}%</strong> for a deal of <strong>₹${askAmount.toFixed(2)} Cr</strong>.</p>
+          <p><em>${equityFeedback}</em></p>
+          <div class="industry-trend">
+            <h4>${industry.charAt(0).toUpperCase() + industry.slice(1)} Industry Trends</h4>
+            <p>${selected.text}</p>
+            <img src="${selected.image}" alt="${industry} industry trends graph">
+          </div>
+        </div>
+      `;
+    });
+
+    // Scroll-based chart animation
+    const chartRows = document.querySelectorAll('.chart-row');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    chartRows.forEach(row => observer.observe(row));
+  </script>
 </body>
 </html>
