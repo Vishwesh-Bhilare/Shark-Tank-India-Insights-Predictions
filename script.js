@@ -107,3 +107,18 @@ document.getElementById("prediction-form").addEventListener("submit", async func
     </div>
   `;
 });
+
+// 🔄 Chart animation on scroll
+const chartRows = document.querySelectorAll('.chart-row');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+chartRows.forEach(row => observer.observe(row));
