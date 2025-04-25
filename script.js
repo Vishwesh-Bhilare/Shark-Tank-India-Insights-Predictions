@@ -48,7 +48,7 @@ document.getElementById("prediction-form").addEventListener("submit", async func
     },
     tech: {
       text: "Tech startups attract high valuations due to scalability.",
-      image: "images/industry-tech.png",
+      image: "images/industry-tech.jpg",
       averageDeal: { equity: 7.6, amount: 81.6 },
       similar: [
         { name: "funngro", revenue: "N/A", deal: 50, equity: 4.16 },
@@ -57,7 +57,7 @@ document.getElementById("prediction-form").addEventListener("submit", async func
     },
     fashion: {
       text: "Fashion startups rely on niche branding and trends.",
-      image: "images/industry-fashion.png",
+      image: "images/industry-fashion.jpg",
       averageDeal: { equity: 10, amount: 50 },
       similar: [
         { name: "Arata", revenue: 170, deal: 100, equity: 1.33 },
